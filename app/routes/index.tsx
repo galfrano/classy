@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useState } from 'react';
+import SignIn from './sign-in'
+import SignUp from './sign-up'
+
 
 export default function Index() {
-  const [visible, setVisible] = useState(false)
-
+  const [isSignIn, setIsSignIn] = useState(false)
+  const signUp = () => (
+    <>Don't have an account? <span role="button" onClick={()=>setIsSignIn(false)}>SIGN UP</span></>
+  )
+  const signIn = () => (
+    <>Already have an account? <span role="button" onClick={()=>setIsSignIn(true)}>SIGN IN</span></>
+  )
   return (
     <div className="wrapper">
       <div className="dog">
@@ -16,21 +24,9 @@ export default function Index() {
       </div>
       <div className="right-side">
         <div className="right-corner">
-          Don't have an account? <a href="">SIGN UP</a>
+          {isSignIn ? signUp() : signIn()}
         </div>
-        <div className="sign">
-          <h2>Sign in to Classy</h2>
-          <h3>Enter your details below</h3>
-          <form method="post">
-            <input type="text" placeholder="Email" />
-            <input type={visible ? "text" : "password"} placeholder="Password" />
-            <img
-              src="images/eye.png"
-              onMouseDown={() => setVisible(true)}
-              onMouseUp={() => setVisible(false)} />
-            <button>SIGN IN</button>
-          </form>
-        </div>
+        {isSignIn ? <SignIn /> : <SignUp />}
       </div>
     </div>
   );

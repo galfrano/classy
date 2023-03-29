@@ -70,6 +70,10 @@ body{
     margin-bottom: 60px;
 }
 
+.sign.error h3{
+    color: #f00;
+}
+
 .sign{
     position: absolute;
     left: 50%;
@@ -78,7 +82,7 @@ body{
     width: 480px;
 }
 
-input[type=text], input[type=password]{
+.sign input{
     width: 100%;
     border-width: 0 0 1px 0;
     border-color: #DAE1E7;
@@ -87,7 +91,7 @@ input[type=text], input[type=password]{
     padding: 8px 5px;
 }
 
-input[type=text]::placeholder, input[type=password]::placeholder{
+.sign input::placeholder{
     color: #DAE1E7;
 }
 .sign button{
@@ -103,18 +107,18 @@ input[type=text]::placeholder, input[type=password]::placeholder{
 
 .right-corner{
     float: right;
-    display: inline-block;
     margin: 40px;
     font-size: 14px;
     color: #C9CED3;
 }
-.right-corner a{
+.right-corner span{
     color: #949EA8;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
 }
 
-.right-corner a:hover{
+.right-corner span:hover{
     text-decoration: underline;
 }
 .sign form{
@@ -125,4 +129,8 @@ input[type=text]::placeholder, input[type=password]::placeholder{
     position: absolute;
     right: 0px;
     top: 100px;
+}
+
+.sign.error input{
+    border-color: #F00;
 }
