@@ -6,6 +6,7 @@ body{
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
     color: #000000;
+    background-color: #F5F5F5;;
 }
 .wrapper{
     height: 100%;
@@ -55,6 +56,7 @@ body{
     position: relative;
     height: 100%;
     width: 75%;
+    background-color: #FFF;
 }
 
 .sign h2{
@@ -82,7 +84,7 @@ body{
     width: 480px;
 }
 
-.sign input{
+input{
     width: 100%;
     border-width: 0 0 1px 0;
     border-color: #DAE1E7;
@@ -91,7 +93,7 @@ body{
     padding: 8px 5px;
 }
 
-.sign input::placeholder{
+input::placeholder{
     color: #DAE1E7;
 }
 .sign button{
@@ -134,3 +136,382 @@ body{
 .sign.error input{
     border-color: #F00;
 }
+
+.not-found{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+}
+.not-found p{
+    color: #949EA8;
+    font-size: 18px;
+    margin: 2px 0;
+}
+.not-found h1{
+    font-size: 28px;
+}
+
+.not-found button{
+    background-color: #323C46;
+    color: #FFF;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 60px;
+    width: 240px;
+    font-weight: bold;
+    border: 0;
+    margin: 20px 0;
+}
+
+header h1{
+    font-size: 24px;
+    float: left;
+}
+header .user{
+    float: right;
+    color: #949EA8;
+    position: relative;
+    top: 15px;
+}
+
+header .circle{
+    background-color: #D9DCE1;
+    display: table-cell;
+    padding: 10px;
+    border-radius: 100px;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    position: relative;
+    bottom: 15px;
+    right: 4px;
+}
+.circle span{
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+}
+
+header .user-name{
+    display: table-cell;
+
+}
+
+header{
+    padding: 20px
+}
+
+.class-card{
+    height: 300px;
+    width: 390px;
+    display:inline-block;
+    background-color:#FFF;
+    box-shadow:  2px 3px rgba(0, 0, 0, 0.108696);
+    margin: 10px;
+    border-radius: 2px;
+    padding: 32px;
+    position: relative;
+    vertical-align: top;
+}
+
+.dashboard{
+    margin: 50px auto;
+    padding: 0 120px;
+    max-width: 1500px;
+}
+
+.class-card .date, .class-detail .date{
+    color: #CACDD0;
+    font-size: 14px;
+}
+
+.class-card h2{
+    color: #323C46;
+    font-size: 22px;
+    margin-top: 32px;
+    margin-bottom: 5px;
+}
+
+.class-card .author{
+    color: #7D7878;
+    font-size: 14px;
+    margin-bottom: 32px;
+    display: inline-block;
+}
+
+.class-card p{
+    margin-bottom: 32px;
+    color: #949EA8;
+}
+
+.class-card .bottom{
+    color: #949EA8;
+    position: absolute;
+    bottom: 32px;
+    width: 100%;
+}
+.class-card img{
+    margin: 0 4px;
+    position: relative;
+    top: 2px;
+}
+
+.class-card button{
+    border-radius: 4px;
+    font-size: 14px;
+    height: 32px;
+    width: 100px;
+    font-weight: bold;
+    border: 0;
+    float: right;
+    margin-right: 64px;
+}
+
+.filters span{
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px;
+}
+.filters .active{
+    color: #323C46;
+}
+
+.filters{
+    display: inline-block;
+}
+.view{
+    float: right;
+    margin-right: 50px;
+}
+.view img{
+    cursor: pointer;
+}
+
+.class-line{
+    background-color:#FFF;
+    box-shadow:  2px 3px rgba(0, 0, 0, 0.108696);
+    margin: 10px;
+    border-radius: 2px;
+    padding: 32px;
+    position: relative;
+}
+.class-line *{
+    display: inline-block;
+}
+
+.class-line h2{
+    width: 300px;
+    margin: 0;
+    color: #323C46;
+    font-weight: normal;
+}
+
+.class-line p{
+    font-size: 14px;
+    margin: 0;
+    color: #949EA8;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.class-line .author{
+    margin: 0;
+    font-size: 14px;
+    color: #7D7878;
+    width: 180px;
+    padding-left:30px;
+}
+.class-line .date{
+    color: #CACDD0;
+    width: 200px;
+}
+
+.class-line .attendees{
+    color: #949EA8;
+    width: 150px;
+}
+.class-line button{
+    border-radius: 4px;
+    font-size: 14px;
+    height: 32px;
+    width: 100px;
+    font-weight: bold;
+    border: 0;
+    float: right;
+}
+
+h2 a{
+    text-decoration: none;
+    color: inherit;
+}
+.menubar{
+    color: #A9AEB4;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.class-data{
+    display: table-cell;
+    background-color:#FFF;
+    box-shadow:  2px 3px rgba(0, 0, 0, 0.108696);
+    margin: 10px;
+    border-radius: 2px;
+    padding: 32px;
+    position: relative;
+    min-width: 75%;
+}
+
+.class-attendees{
+    display: table-cell;
+    background-color:#FFF;
+    box-shadow:  2px 3px rgba(0, 0, 0, 0.108696);
+    margin: 10px;
+    border-radius: 2px;
+    padding: 32px;
+    position: relative;
+    min-width: 30%;
+}
+
+.class-data h1{
+    color: #323C46;
+    font-size: 45px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.class-attendees h2{
+    color: #323C46;
+    font-size: 22px;
+    font-weight: normal;
+}
+.class-attendees span{
+    display: inline-block;
+    background-color: #D9DCE1;
+    border-radius: 100px;
+    color: #949EA8;
+    margin: 10px;
+    padding:12px;
+    font-size: 13px;
+}
+.class-detail{
+    border-collapse: separate;
+    border-spacing: 18px;
+    color: #949EA8;
+}
+
+.class-detail .author{
+    color: #7D7878;
+    font-size: 14px;
+    margin: 0;
+}
+
+.class-detail p{
+    margin: 24px 0;
+    font-size: 16px;
+}
+.class-detail button{
+    border-radius: 4px;
+    font-size: 14px;
+    height: 32px;
+    width: 100px;
+    font-weight: bold;
+    border: 0;
+    float: right;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    padding:20px;
+    width: 100%; 
+}
+
+.footer a{
+    margin-right:50px;
+    color: #FFF;
+    text-decoration: none;
+    float: right;
+    background-color: #323C46;
+    padding: 10px 16px;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.header button{
+    border: 0;
+    background-color: inherit;
+    color: #D9DCE1;
+}
+
+.logout{
+    background-color: #FFF;
+    padding:10px;
+    box-shadow: 2px 3px #0000001c;
+    color: #323c46;
+    position: absolute;
+    right: 0;
+}
+.logout:hover{
+    color: #FFF;
+    background-color: #323c46;
+}
+.logout button{
+    border: 0;
+    color: inherit;
+    font-weight: bold;
+}
+
+button.leave{
+    background-color: #F00;
+    color: #FFF;
+}
+
+button.join{
+    background-color: #22D486;
+    color: #FFF;
+}
+
+button.edit{
+    background-color: #D9DCE1;
+    color: #A9AEB4;
+}
+
+.new-class{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    background-color: #FFF;
+    box-shadow: 2px 3px #0000001c;
+    padding: 32px;
+    text-align: center;
+}
+
+.new-class h2{
+    font-size: 28px;
+    color: #323C46;
+    font-weight: normal;
+}
+
+.new-class h4{
+    font-size: 18px;
+    color: #949EA8;
+    font-weight: normal;
+}
+
+.new-class button{
+    background-color: #22D486;
+    color: #FFF;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 60px;
+    width: 240px;
+    font-weight: bold;
+    border: 0;
+    margin: 0 auto; 
+}
+

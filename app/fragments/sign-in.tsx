@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { Form } from "@remix-run/react";
 
-export default function SignIn(){
-    const [visible, setVisible] = useState(false)
-    const [error, setError] = useState(false)
+export default function SignIn({ error }: { error: Boolean }){
+    const [visible, setVisible] = useState(false);
     return (
        <div className={`sign ${error && "error"}`} >
             <h2>Sign in to Classy</h2>
@@ -11,15 +11,15 @@ export default function SignIn(){
                 "Oops! That email and password combination is not valid":
                 "Enter your details below"
             }</h3>
-            <form method="post">
-            <input type="text" placeholder="Email" />
-            <input type={visible ? "text" : "password"} placeholder="Password" />
+            <Form method="post">
+            <input name="email" type="text" placeholder="Email" />
+            <input name="password" type={visible ? "text" : "password"} placeholder="Password" />
             <img
                 src="images/eye.png"
                 onMouseDown={() => setVisible(true)}
                 onMouseUp={() => setVisible(false)} />
             <button>SIGN IN</button>
-            </form>
+            </Form>
         </div>
         )
 }
