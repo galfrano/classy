@@ -12,7 +12,7 @@ export default function ClassCard({ classData, currentUser }: { classData: Class
             <p>{classData.description}</p>
             <div className="bottom">
                 <img src="images/person.png" />{classData.attendees.length} of {classData.no_of_places}
-                {ClassActionButton(classData.created_by, currentUser, classData.attendees)}
+                {ClassActionButton(classData._id, classData.created_by, currentUser, classData.attendees)}
             </div>
         </div>
     )

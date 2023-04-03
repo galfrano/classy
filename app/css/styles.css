@@ -267,6 +267,7 @@ header{
     border: 0;
     float: right;
     margin-right: 64px;
+    text-transform: capitalize;
 }
 
 .filters span{
@@ -340,6 +341,9 @@ header{
     width: 100px;
     font-weight: bold;
     border: 0;
+    text-transform: capitalize;
+}
+.class-line form{
     float: right;
 }
 
@@ -515,3 +519,11 @@ button.edit{
     margin: 0 auto; 
 }
 
+input.error{
+    border-color: #F00;
+}
+
+input.error::placeholder{
+    color: #F00;
+    opacity: 1;
+}

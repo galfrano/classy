@@ -5,37 +5,32 @@ import { json, redirect } from '@remix-run/node';
 import type { ActionArgs, LoaderArgs } from "@remix-run/node";
 import { createUserSession, getUserId } from "~/session";
 import { validateEmail, verifyLogin } from '~/models/users'
+
 export async function loader({ request }: LoaderArgs) {
   const userId = await getUserId(request);
-  if (userId) return redirect("/");
+  if (userId) return redirect("/dashboard");
   return json({});
 }
 
 export async function action({ request }: ActionArgs) {
-  console.log('action!')
   const formData = await request.formData();
   const email = formData.get("email");
   const password = formData.get("password");
-  console.log({email, password})
   if (email == null || !validateEmail(email.toString())) {
-    console.log('one')
     return json(
       { errors: { email: "Email is invalid", password: null } },
       { status: 400 }
     );
   }
   else if (typeof password !== "string" || password.length === 0) {
-    console.log('two')
     return json(
       { errors: { password: "Password is required", email: null } },
       { status: 400 }
     );
   }
   else{
-    console.log('three')
     const user = await verifyLogin(email.toString(), password);
     if (!user) {
-      console.log('three')
       return json(
         { errors: { email: "Invalid email or password", password: null } },
         { status: 400 }
