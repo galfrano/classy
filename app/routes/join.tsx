@@ -1,7 +1,6 @@
 import { LoaderArgs, ActionArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { join } from '~/models/attendees'
-import { useLoaderData } from "@remix-run/react";
 import { getUser } from '~/session'
 export async function loader({ request, params }: LoaderArgs) {
     const url = new URL(request.url);

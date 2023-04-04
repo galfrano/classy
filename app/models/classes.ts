@@ -1,3 +1,4 @@
+import { EndPoint } from './endpoint';
 
 export type ClassData = {
     _id: any,
@@ -23,14 +24,14 @@ export type NewClassData = {
 
 export async function getClasses() {
   const res = await fetch(
-    'http://api-gen.local/classes'
+    EndPoint+'classes'
   ).then((res) => res.json());
   return res;
 }
 
 export async function getClassById(id: any) {
   const res = await fetch(
-    'http://api-gen.local/classes/'+id
+    EndPoint+'classes/'+id
   ).then((res) => res.json());
   return res;
 }
@@ -42,7 +43,19 @@ export async function createNewClass(classData: NewClassData) {
     body: JSON.stringify(classData)
   };
   const res = await fetch(
-    'http://api-gen.local/classes/', requestOptions
+    EndPoint+'classes/', requestOptions
+  ).then((res) => res.json());
+  return res;
+}
+
+export async function updateClass(classData: NewClassData, classId: any) {
+  const requestOptions = {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(classData)
+  };
+  const res = await fetch(
+    EndPoint+'classes/'+classId, requestOptions
   ).then((res) => res.json());
   return res;
 }

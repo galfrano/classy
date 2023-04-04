@@ -425,6 +425,7 @@ h2 a{
     font-weight: bold;
     border: 0;
     float: right;
+    text-transform: capitalize;
 }
 .footer{
     position: fixed;

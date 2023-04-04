@@ -3,12 +3,13 @@ import { getUser } from '~/session';
 //import type { User } from '~/models/users';
 import { redirect } from "@remix-run/node";
 import { json, Request } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+//import { useLoaderData } from "@remix-run/react";
 import type { ActionArgs, LoaderArgs } from "@remix-run/node";
 import { Form, useActionData } from "@remix-run/react";
 import { createNewClass } from '~/models/classes'
 
 export async function action({ request }: ActionArgs): Promise<any> {
+  console.log('here')
   const user = await getUser(request);
   if(user != null){
     const formData = await request.formData();
@@ -57,16 +58,10 @@ export const loader = async ({ request }: { request: Request }) => {
   return user ? json<LoaderData>({ data: user }) : redirect("/");
 };
 
-const inputAttributes = (name: string, error: string) => {
-  return {
-    name,
-    placeholder: name
-  }
-}
-
 export default function New() {
   const actionData = useActionData<typeof action>();
   const [error, setError] = useState(actionData?.error != null ? actionData?.error : false);
+  console.log({error, actionData});
   const input = (name: string, error: string | false) => {
     const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
     return (

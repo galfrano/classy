@@ -1,3 +1,4 @@
+import { EndPoint } from './endpoint';
 
 export type User = {
     _id: any,
@@ -9,14 +10,14 @@ export type User = {
 
 export async function getUsers(): Promise<User[]> {
     const res = await fetch(
-      'http://api-gen.local/users'
+      EndPoint+'users'
     ).then((res) => res.json());
     return res;
 }
 
 export async function getUserById(id: any): Promise<User> {
     const res = await fetch(
-      'http://api-gen.local/users/'+id
+      EndPoint+'users/'+id
     ).then((res) => res.json());
     return res;
 }
