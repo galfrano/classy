@@ -1,4 +1,4 @@
-import { EndPoint } from './endpoint';
+const endpoint = 'https://ivanbeltrandesigns.com/classy-api/public/';
 
 export type User = {
     _id: any,
@@ -10,14 +10,14 @@ export type User = {
 
 export async function getUsers(): Promise<User[]> {
     const res = await fetch(
-      EndPoint+'users'
+      endpoint+'users'
     ).then((res) => res.json());
     return res;
 }
 
 export async function getUserById(id: any): Promise<User> {
     const res = await fetch(
-      EndPoint+'users/'+id
+      endpoint+'users/'+id
     ).then((res) => res.json());
     return res;
 }

@@ -1,4 +1,5 @@
-import { EndPoint } from './endpoint';
+
+const endpoint = 'https://ivanbeltrandesigns.com/classy-api/public/';
 
 export async function join(classId: any, userId: any){
     const attendee = {"class": classId, "attendee": userId}
@@ -8,7 +9,7 @@ export async function join(classId: any, userId: any){
         body: JSON.stringify(attendee)
       };
       const res = await fetch(
-        EndPoint+'attendees/', requestOptions
+        endpoint+'attendees/', requestOptions
       ).then((res) => res.json());
       return res;
 }
@@ -21,7 +22,7 @@ export async function leave(classId: any, userId: any){
         body: JSON.stringify(attendee)
       };
       const res = await fetch(
-        EndPoint+'attendees/'+classId, requestOptions
+        endpoint+'attendees/'+classId, requestOptions
       ).then((res) => res.json());
       return res;
 }

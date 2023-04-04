@@ -1,4 +1,4 @@
-import { EndPoint } from './endpoint';
+const endpoint = 'https://ivanbeltrandesigns.com/classy-api/public/';
 
 export type ClassData = {
     _id: any,
@@ -24,14 +24,14 @@ export type NewClassData = {
 
 export async function getClasses() {
   const res = await fetch(
-    EndPoint+'classes'
+    endpoint+'classes'
   ).then((res) => res.json());
   return res;
 }
 
 export async function getClassById(id: any) {
   const res = await fetch(
-    EndPoint+'classes/'+id
+    endpoint+'classes/'+id
   ).then((res) => res.json());
   return res;
 }
@@ -43,7 +43,7 @@ export async function createNewClass(classData: NewClassData) {
     body: JSON.stringify(classData)
   };
   const res = await fetch(
-    EndPoint+'classes/', requestOptions
+    endpoint+'classes/', requestOptions
   ).then((res) => res.json());
   return res;
 }
@@ -55,7 +55,7 @@ export async function updateClass(classData: NewClassData, classId: any) {
     body: JSON.stringify(classData)
   };
   const res = await fetch(
-    EndPoint+'classes/'+classId, requestOptions
+    endpoint+'classes/'+classId, requestOptions
   ).then((res) => res.json());
   return res;
 }
